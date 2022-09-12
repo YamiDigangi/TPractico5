@@ -51,6 +51,12 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
             }
         });
 
+        jtfNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfNombreActionPerformed(evt);
+            }
+        });
+
         jbGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbGuardar.setForeground(new java.awt.Color(255, 102, 51));
         jbGuardar.setText("GUARDAR");
@@ -146,6 +152,10 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
     private void jtfLegajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfLegajoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfLegajoActionPerformed
+
+    private void jtfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfNombreActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

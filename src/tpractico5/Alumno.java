@@ -1,13 +1,18 @@
 
 package tpractico5;
 
+import java.util.HashSet;
+import java.util.Set;
+import javax.swing.JOptionPane;
+
 
 public class Alumno {
     
     private int legajo;
     private String apellido;
     private String nombre;
-
+    Set<Materia>materias = new HashSet<>();
+    
     public Alumno() {
     }
     
@@ -43,11 +48,22 @@ public class Alumno {
     }
     
     public void agregarMateria(Materia materia){
-        
+            materias.add(materia);
+            JOptionPane.showMessageDialog(null, "Materia agregada");
+     
     }
     
     public int cantidadMaterias(){
-        return 0; 
+        return materias.size();
+    }
+    
+    Set<Materia>getMaterias(){
+        return materias;
+    }
+
+    @Override
+    public String toString() {
+        return "legajo=" + legajo + ", apellido=" + apellido + ", nombre=" + nombre + ", materias=" + materias ;
     }
     
     
