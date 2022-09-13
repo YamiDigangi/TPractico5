@@ -9,12 +9,12 @@ package vistasTp5;
  *
  * @author yamic
  */
-public class FormulariodeInscripcion extends javax.swing.JInternalFrame {
+public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FormulariodeInscripcion
      */
-    public FormulariodeInscripcion() {
+    public FormularioDeInscripcion() {
         initComponents();
     }
 
@@ -60,6 +60,11 @@ public class FormulariodeInscripcion extends javax.swing.JInternalFrame {
         jbSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 102, 51));
         jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 51));
@@ -116,6 +121,10 @@ public class FormulariodeInscripcion extends javax.swing.JInternalFrame {
     private void jcbMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbMateriasActionPerformed
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

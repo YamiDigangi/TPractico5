@@ -69,11 +69,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmMateria.setForeground(new java.awt.Color(255, 102, 102));
         jmMateria.setText("Materia");
         jmMateria.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
-        jmMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmMateriaActionPerformed(evt);
-            }
-        });
 
         jmiAltaMateria.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jmiAltaMateria.setForeground(new java.awt.Color(255, 102, 102));
@@ -88,6 +83,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmiFormularioInscripcion.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jmiFormularioInscripcion.setForeground(new java.awt.Color(255, 102, 102));
         jmiFormularioInscripcion.setText("Formulario de Inscripcion");
+        jmiFormularioInscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiFormularioInscripcionActionPerformed(evt);
+            }
+        });
         jmMateria.add(jmiFormularioInscripcion);
 
         jmPrincipal.add(jmMateria);
@@ -120,26 +120,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaMateriaActionPerformed
-       
-    }//GEN-LAST:event_jmiAltaMateriaActionPerformed
-
-    private void jmiAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaAlumnoActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        FormularioDeAlumnos fda=new FormularioDeAlumnos();
-        escritorio.add(fda);
-    }//GEN-LAST:event_jmiAltaAlumnoActionPerformed
-
-    private void jmMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmMateriaActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
         FormularioDeMaterias fdm=new FormularioDeMaterias();
+        fdm.setVisible(true);
         escritorio.add(fdm);
-    }//GEN-LAST:event_jmMateriaActionPerformed
+    }//GEN-LAST:event_jmiAltaMateriaActionPerformed
 
     private void jmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmSalirMouseClicked
         System.exit(0);
     }//GEN-LAST:event_jmSalirMouseClicked
+
+    private void jmiFormularioInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFormularioInscripcionActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+       FormularioDeInscripcion fdi = new FormularioDeInscripcion();
+        fdi.setVisible(true);
+        escritorio.add(fdi);
+    }//GEN-LAST:event_jmiFormularioInscripcionActionPerformed
+
+    private void jmiAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaAlumnoActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioDeAlumnos fda = new FormularioDeAlumnos();
+        fda.setVisible(true);
+        escritorio.add(fda);
+    }//GEN-LAST:event_jmiAltaAlumnoActionPerformed
 
     /**
      * @param args the command line arguments

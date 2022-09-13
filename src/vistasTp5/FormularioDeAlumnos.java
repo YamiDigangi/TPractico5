@@ -33,10 +33,10 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
         jbGuardar = new javax.swing.JButton();
         jbNuevo = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
-        jLlegajo = new javax.swing.JLabel();
-        jLforAlumno = new javax.swing.JLabel();
-        jLapellido = new javax.swing.JLabel();
-        jLnombre = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel0 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
         jtfLegajo.addActionListener(new java.awt.event.ActionListener() {
@@ -60,30 +60,45 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
         jbGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbGuardar.setForeground(new java.awt.Color(255, 102, 51));
         jbGuardar.setText("GUARDAR");
+        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardarActionPerformed(evt);
+            }
+        });
 
         jbNuevo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbNuevo.setForeground(new java.awt.Color(255, 102, 51));
         jbNuevo.setText("NUEVO");
+        jbNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNuevoActionPerformed(evt);
+            }
+        });
 
         jbSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 102, 51));
         jbSalir.setText("SALIR");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
 
-        jLlegajo.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLlegajo.setForeground(new java.awt.Color(255, 102, 51));
-        jLlegajo.setText("LEGAJO:");
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel1.setText("LEGAJO:");
 
-        jLforAlumno.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        jLforAlumno.setForeground(new java.awt.Color(255, 102, 51));
-        jLforAlumno.setText("Formulario de Alumno");
+        jLabel0.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel0.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel0.setText("Formulario de Alumno");
 
-        jLapellido.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLapellido.setForeground(new java.awt.Color(255, 102, 51));
-        jLapellido.setText("APELLIDO:");
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel2.setText("APELLIDO:");
 
-        jLnombre.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLnombre.setForeground(new java.awt.Color(255, 102, 51));
-        jLnombre.setText("NOMBRE:");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel3.setText("NOMBRE:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,9 +109,9 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLlegajo)
-                            .addComponent(jLapellido)
-                            .addComponent(jLnombre))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
@@ -113,27 +128,27 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
                         .addGap(51, 51, 51)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLforAlumno))))
+                            .addComponent(jLabel0))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLforAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel0, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfLegajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLlegajo))
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLapellido))
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLnombre))
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbGuardar)
@@ -157,12 +172,38 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfNombreActionPerformed
 
+    private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+       int legajo =Integer.parseInt(jtfLegajo.getText());
+        String nombre = jtfNombre.getText();
+        String apellido = jtfApellido.getText();
+        
+        
+        /*Cliente cli = new Cliente(dni,nombre,apellido,ciudad,domicilio);
+        long telefono =Long.parseLong(jtfTelefono.getText());
+        Directorio df = Directorio.getInstance();
+        df.agragarCliente(telefono, cli);*/
+
+
+    }//GEN-LAST:event_jbGuardarActionPerformed
+
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
+        jtfLegajo.setText("");
+        jtfApellido.setText("");
+        jtfNombre.setText("");
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbNuevoActionPerformed
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+         dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLapellido;
-    private javax.swing.JLabel jLforAlumno;
-    private javax.swing.JLabel jLlegajo;
-    private javax.swing.JLabel jLnombre;
+    private javax.swing.JLabel jLabel0;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbNuevo;
