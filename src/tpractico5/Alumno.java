@@ -11,7 +11,7 @@ public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
-    Set<Materia>materias = new HashSet<>();
+    Set<Materia> materias = new HashSet<>();
     
     public Alumno() {
     }
@@ -49,11 +49,12 @@ public class Alumno {
     
     public void agregarMateria(Materia materia){
             materias.add(materia);
-            JOptionPane.showMessageDialog(null, "Materia agregada");
+            JOptionPane.showMessageDialog(null, "La materia " + materia.toString() + " se agregó correctamente.");
      
     }
     
     public int cantidadMaterias(){
+        //JOptionPane.showMessageDialog(null, "Estas inscripto a: " + materias.size() + " materias.");
         return materias.size();
     }
     
@@ -61,10 +62,8 @@ public class Alumno {
         return materias;
     }
 
-    @Override
-    public String toString() {
-        return "legajo=" + legajo + ", apellido=" + apellido + ", nombre=" + nombre + ", materias=" + materias ;
+    void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

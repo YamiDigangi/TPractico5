@@ -1,5 +1,5 @@
 
-package tpractico5;
+package vistasTp5;
 
 
 public class MenuPrincipal extends javax.swing.JFrame {
@@ -96,9 +96,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmSalir.setForeground(new java.awt.Color(255, 102, 102));
         jmSalir.setText("SALIR");
         jmSalir.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
-        jmSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmSalirActionPerformed(evt);
+        jmSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jmSalirMouseClicked(evt);
             }
         });
         jmPrincipal.add(jmSalir);
@@ -131,12 +131,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiAltaAlumnoActionPerformed
 
     private void jmMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmMateriaActionPerformed
-        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioDeMaterias fdm=new FormularioDeMaterias();
+        escritorio.add(fdm);
     }//GEN-LAST:event_jmMateriaActionPerformed
 
-    private void jmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmSalirActionPerformed
+    private void jmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jmSalirMouseClicked
 
     /**
      * @param args the command line arguments
