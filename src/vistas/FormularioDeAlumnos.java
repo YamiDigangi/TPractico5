@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vistasTp5;
+package vistas;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,6 +41,11 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
+        jtfLegajo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtfLegajoFocusLost(evt);
+            }
+        });
         jtfLegajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfLegajoActionPerformed(evt);
@@ -161,7 +168,7 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtfApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfApellidoActionPerformed
-        // TODO add your handling code here:
+        //
     }//GEN-LAST:event_jtfApellidoActionPerformed
 
     private void jtfLegajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfLegajoActionPerformed
@@ -197,6 +204,15 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
          dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
+
+    private void jtfLegajoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfLegajoFocusLost
+        try {
+            int legajo =Integer.parseInt(jtfLegajo.getText());
+        } catch (NumberFormatException nf) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un Número.");
+            jtfLegajo.requestFocus();
+        }
+    }//GEN-LAST:event_jtfLegajoFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

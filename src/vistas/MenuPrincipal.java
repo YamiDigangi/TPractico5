@@ -1,5 +1,5 @@
 
-package vistasTp5;
+package vistas;
 
 
 public class MenuPrincipal extends javax.swing.JFrame {

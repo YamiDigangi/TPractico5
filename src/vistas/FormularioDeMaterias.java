@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vistasTp5;
+package vistas;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -62,10 +64,26 @@ public class FormularioDeMaterias extends javax.swing.JInternalFrame {
         jbNuevo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbNuevo.setForeground(new java.awt.Color(255, 102, 51));
         jbNuevo.setText("Nuevo");
+        jbNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNuevoActionPerformed(evt);
+            }
+        });
 
         jbSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 102, 51));
         jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
+
+        jtfCodMateria.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtfCodMateriaFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,6 +151,27 @@ public class FormularioDeMaterias extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtfCodMateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfCodMateriaFocusLost
+        // TODO add your handling code here:                     
+        try {
+            int CodMateria =Integer.parseInt(jtfCodMateria.getText());
+        } catch (NumberFormatException nf) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un Número.");
+            jtfCodMateria.requestFocus();
+        }
+    }//GEN-LAST:event_jtfCodMateriaFocusLost
+
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
+        // TODO add your handling code here:
+        jtfAnioPertenece.setText("");
+        jtfCodMateria.setText("");
+        jtfNomMateria.setText("");
+    }//GEN-LAST:event_jbNuevoActionPerformed
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
