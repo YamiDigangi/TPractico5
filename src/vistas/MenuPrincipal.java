@@ -2,8 +2,16 @@
 package vistas;
 
 
-public class MenuPrincipal extends javax.swing.JFrame {
+import java.util.HashSet;
+import java.util.Set;
+import tpractico5.Alumno;
+import tpractico5.Materia;
 
+
+public class MenuPrincipal extends javax.swing.JFrame {
+Set<Materia> listaMaterias = new HashSet<>();
+Set<Alumno> listaAlumnos= new HashSet<>();
+    
     /**
      * Creates new form MenuPrincipal
      */

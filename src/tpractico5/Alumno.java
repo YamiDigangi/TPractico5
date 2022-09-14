@@ -48,20 +48,25 @@ public class Alumno {
     }
     
     public void agregarMateria(Materia materia){
-            materias.add(materia);
+           if (materias.add(materia)) {
             JOptionPane.showMessageDialog(null, "La materia " + materia.toString() + " se agregó correctamente.");
-     
+           } else {
+               JOptionPane.showMessageDialog(null, "Esa materia ya fue agregada anteriormente");
+           }
     }
     
     public int cantidadMaterias(){
         //JOptionPane.showMessageDialog(null, "Estas inscripto a: " + materias.size() + " materias.");
         return materias.size();
     }
+
+    @Override
+    public String toString() {
+        return "legajo = " + legajo + ", apellido = " + apellido + ", nombre = " + nombre + '}';
+    }
     
-    Set<Materia>getMaterias(){
-        return materias;
+    
     }
 
     
     
-}

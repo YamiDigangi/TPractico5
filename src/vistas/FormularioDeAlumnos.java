@@ -5,7 +5,13 @@
  */
 package vistas;
 
+
+
+import java.util.HashSet;
+import java.util.*;
 import javax.swing.JOptionPane;
+import tpractico5.Alumno;
+import tpractico5.Materia;
 
 /**
  *
@@ -13,12 +19,16 @@ import javax.swing.JOptionPane;
  */
 public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
 
+
     /**
      * Creates new form FormularioDeAlumnos
      */
-    public FormularioDeAlumnos() {
+    public FormularioDeAlumnos(){  
         initComponents();
+        
     }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -181,14 +191,13 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
        int legajo =Integer.parseInt(jtfLegajo.getText());
-        String nombre = jtfNombre.getText();
         String apellido = jtfApellido.getText();
+        String nombre = jtfNombre.getText();
+        
+        Alumno a = new Alumno(legajo, apellido, nombre);
+        JOptionPane.showMessageDialog(this, "Alumno agregago Exitosamente " + a);
         
         
-        /*Cliente cli = new Cliente(dni,nombre,apellido,ciudad,domicilio);
-        long telefono =Long.parseLong(jtfTelefono.getText());
-        Directorio df = Directorio.getInstance();
-        df.agragarCliente(telefono, cli);*/
 
 
     }//GEN-LAST:event_jbGuardarActionPerformed
