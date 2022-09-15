@@ -5,7 +5,9 @@
  */
 package vistas;
 
+import java.util.HashSet;
 import javax.swing.JOptionPane;
+import tpractico5.Materia;
 
 /**
  *
@@ -13,13 +15,12 @@ import javax.swing.JOptionPane;
  */
 public class FormularioDeMaterias extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FormularioDeMaterias
-     */
-    public FormularioDeMaterias() {
+private HashSet<Materia> listaMaterias;
+    
+    public FormularioDeMaterias(HashSet<Materia> listaMaterias) {
         initComponents();
+        this.listaMaterias = listaMaterias;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,6 +61,11 @@ public class FormularioDeMaterias extends javax.swing.JInternalFrame {
         jbGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbGuardar.setForeground(new java.awt.Color(255, 102, 51));
         jbGuardar.setText("Guardar");
+        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardarActionPerformed(evt);
+            }
+        });
 
         jbNuevo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbNuevo.setForeground(new java.awt.Color(255, 102, 51));
@@ -172,6 +178,21 @@ public class FormularioDeMaterias extends javax.swing.JInternalFrame {
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
         dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
+
+    private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+        // TODO add your handling code here:
+        int anio =Integer.parseInt(jtfAnioPertenece.getText() );
+        int materia =Integer.parseInt(jtfCodMateria.getText());
+        String nombre = jtfNomMateria.getText();
+        
+        Materia m = new Materia(materia, nombre, anio);
+        
+         if (listaMaterias.add(m)) {
+            JOptionPane.showMessageDialog(null, "La materia " + nombre.toString() + ", se agregó correctamente.");
+           } else {
+               JOptionPane.showMessageDialog(null, "Esa materia ya fue agregada anteriormente");
+           }
+    }//GEN-LAST:event_jbGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

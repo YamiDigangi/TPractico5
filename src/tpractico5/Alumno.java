@@ -55,8 +55,33 @@ public class Alumno {
     }
     
     public int cantidadMaterias(){
-        //JOptionPane.showMessageDialog(null, "Estas inscripto a: " + materias.size() + " materias.");
+        JOptionPane.showMessageDialog(null, getApellido() + " " + getNombre() + ", te inscribiste  en " + materias.size() + " materias.");
         return materias.size();
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 73 * hash + this.legajo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        if (this.legajo != other.legajo) {
+            return false;
+        }
+        return true;
     }
 
     @Override

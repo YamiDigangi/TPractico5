@@ -6,6 +6,7 @@
 package vistas;
 
 
+import java.util.HashSet;
 import javax.swing.JOptionPane;
 import tpractico5.Alumno;
 
@@ -20,10 +21,14 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
     /**
      * Creates new form FormularioDeAlumnos
      */
-    public FormularioDeAlumnos(){  
+  private HashSet<Alumno> listaAlumnos;
+    
+    public FormularioDeAlumnos(HashSet<Alumno> listaAlumnos){  
         initComponents();
+        this.listaAlumnos = listaAlumnos;
         
     }
+    
 
    
 
@@ -192,10 +197,13 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
         String nombre = jtfNombre.getText();
         
         Alumno a = new Alumno(legajo, apellido, nombre);
-        JOptionPane.showMessageDialog(this, "Alumno agregago Exitosamente " + a);
+//        JOptionPane.showMessageDialog(this, "Alumno agregago Exitosamente " + a);
         
-        
-
+        if (listaAlumnos.add(a)) {
+            JOptionPane.showMessageDialog(null, "El Alumno " + nombre.toString() + ", se agregó correctamente.");
+           } else {
+               JOptionPane.showMessageDialog(null, "Este alumno ya fue agregado anteriormente");
+           }
 
     }//GEN-LAST:event_jbGuardarActionPerformed
 

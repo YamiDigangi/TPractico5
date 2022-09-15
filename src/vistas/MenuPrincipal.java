@@ -16,6 +16,7 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
      */
     public MenuPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,6 +30,7 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
 
         jMenu3 = new javax.swing.JMenu();
         escritorio = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jmPrincipal = new javax.swing.JMenuBar();
         jmAlumno = new javax.swing.JMenu();
         jmiAltaAlumno = new javax.swing.JMenuItem();
@@ -44,15 +46,19 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
         escritorio.setBackground(new java.awt.Color(255, 102, 102));
         escritorio.setForeground(new java.awt.Color(255, 0, 51));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Img/student group.png"))); // NOI18N
+
+        escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 271, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
         );
 
         jmAlumno.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -129,7 +135,7 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
     private void jmiAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaMateriaActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        FormularioDeMaterias fdm = new FormularioDeMaterias();
+        FormularioDeMaterias fdm=new FormularioDeMaterias(listaMaterias);
         fdm.setVisible(true);
         escritorio.add(fdm);
     }//GEN-LAST:event_jmiAltaMateriaActionPerformed
@@ -139,11 +145,11 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
     }//GEN-LAST:event_jmSalirMouseClicked
 
     private void jmiFormularioInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFormularioInscripcionActionPerformed
-        //alumnos de mentira para probar.
-        listaAlumnos.add(new Alumno (100,"lopes","juan"));
-        listaAlumnos.add(new Alumno (101,"martinez","perez"));
-        listaMaterias.add(new Materia (15,"Matematica",2));
-        listaMaterias.add(new Materia (12,"web",1));
+//        //alumnos de mentira para probar.
+//        listaAlumnos.add(new Alumno (100,"lopes","juan"));
+//        listaAlumnos.add(new Alumno (101,"martinez","perez"));
+//        listaMaterias.add(new Materia (15,"Matematica",2));
+//        listaMaterias.add(new Materia (12,"web",1));
        //.......
         
         escritorio.removeAll();
@@ -156,7 +162,7 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
     private void jmiAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        FormularioDeAlumnos fda = new FormularioDeAlumnos();
+        FormularioDeAlumnos fda = new FormularioDeAlumnos(listaAlumnos);
         fda.setVisible(true);
         escritorio.add(fda);
     }//GEN-LAST:event_jmiAltaAlumnoActionPerformed
@@ -198,6 +204,7 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jmAlumno;
     private javax.swing.JMenu jmMateria;

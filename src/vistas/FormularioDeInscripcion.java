@@ -6,6 +6,7 @@
 package vistas;
 
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 import tpractico5.Alumno;
 import tpractico5.Materia;
 
@@ -128,18 +129,6 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cargaComboMaterias(){
-        for (Materia materias : lMaterias){
-            jcbMaterias.addItem(materias);
-        }
-    }
-    
-    private void cargaComboAlumnos(){
-        for (Alumno alumnos : lAlumnos){
-            jcbAlumnos.addItem(alumnos);
-        }
-    }
     
     
     private void jcbMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriasActionPerformed
@@ -155,8 +144,20 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         Alumno alumnoElegido = (Alumno)jcbAlumnos.getSelectedItem();
         Materia materiaElegida = (Materia)jcbMaterias.getSelectedItem();
         alumnoElegido.agregarMateria(materiaElegida);
+        JOptionPane.showMessageDialog(null, alumnoElegido + "Te inscribiste en la materia " + materiaElegida);
     }//GEN-LAST:event_jbInscribirActionPerformed
 
+      private void cargaComboMaterias(){
+        for (Materia materias : lMaterias){
+            jcbMaterias.addItem(materias);
+        }
+    }
+    
+    private void cargaComboAlumnos(){
+        for (Alumno alumnos : lAlumnos){
+            jcbAlumnos.addItem(alumnos);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
