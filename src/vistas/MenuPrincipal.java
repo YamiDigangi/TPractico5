@@ -32,9 +32,9 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
         jmPrincipal = new javax.swing.JMenuBar();
         jmAlumno = new javax.swing.JMenu();
         jmiAltaAlumno = new javax.swing.JMenuItem();
+        jmiFormularioInscripcion = new javax.swing.JMenuItem();
         jmMateria = new javax.swing.JMenu();
         jmiAltaMateria = new javax.swing.JMenuItem();
-        jmiFormularioInscripcion = new javax.swing.JMenuItem();
         jmSalir = new javax.swing.JMenu();
 
         jMenu3.setText("jMenu3");
@@ -70,6 +70,16 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
         });
         jmAlumno.add(jmiAltaAlumno);
 
+        jmiFormularioInscripcion.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
+        jmiFormularioInscripcion.setForeground(new java.awt.Color(255, 102, 102));
+        jmiFormularioInscripcion.setText("Formulario de Inscripcion");
+        jmiFormularioInscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiFormularioInscripcionActionPerformed(evt);
+            }
+        });
+        jmAlumno.add(jmiFormularioInscripcion);
+
         jmPrincipal.add(jmAlumno);
 
         jmMateria.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -86,16 +96,6 @@ private HashSet<Materia> listaMaterias = new HashSet<>();
             }
         });
         jmMateria.add(jmiAltaMateria);
-
-        jmiFormularioInscripcion.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        jmiFormularioInscripcion.setForeground(new java.awt.Color(255, 102, 102));
-        jmiFormularioInscripcion.setText("Formulario de Inscripcion");
-        jmiFormularioInscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiFormularioInscripcionActionPerformed(evt);
-            }
-        });
-        jmMateria.add(jmiFormularioInscripcion);
 
         jmPrincipal.add(jmMateria);
 
