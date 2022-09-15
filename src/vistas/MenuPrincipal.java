@@ -3,14 +3,13 @@ package vistas;
 
 
 import java.util.HashSet;
-import java.util.Set;
 import tpractico5.Alumno;
 import tpractico5.Materia;
 
 
 public class MenuPrincipal extends javax.swing.JFrame {
-Set<Materia> listaMaterias = new HashSet<>();
-Set<Alumno> listaAlumnos= new HashSet<>();
+private HashSet<Alumno> listaAlumnos= new HashSet<>();
+private HashSet<Materia> listaMaterias = new HashSet<>();
     
     /**
      * Creates new form MenuPrincipal
@@ -130,7 +129,7 @@ Set<Alumno> listaAlumnos= new HashSet<>();
     private void jmiAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAltaMateriaActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        FormularioDeMaterias fdm=new FormularioDeMaterias();
+        FormularioDeMaterias fdm = new FormularioDeMaterias();
         fdm.setVisible(true);
         escritorio.add(fdm);
     }//GEN-LAST:event_jmiAltaMateriaActionPerformed
@@ -140,9 +139,16 @@ Set<Alumno> listaAlumnos= new HashSet<>();
     }//GEN-LAST:event_jmSalirMouseClicked
 
     private void jmiFormularioInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFormularioInscripcionActionPerformed
+        //alumnos de mentira para probar.
+        listaAlumnos.add(new Alumno (100,"lopes","juan"));
+        listaAlumnos.add(new Alumno (101,"martinez","perez"));
+        listaMaterias.add(new Materia (15,"Matematica",2));
+        listaMaterias.add(new Materia (12,"web",1));
+       //.......
+        
         escritorio.removeAll();
         escritorio.repaint();
-       FormularioDeInscripcion fdi = new FormularioDeInscripcion();
+       FormularioDeInscripcion fdi = new FormularioDeInscripcion(listaAlumnos,listaMaterias);
         fdi.setVisible(true);
         escritorio.add(fdi);
     }//GEN-LAST:event_jmiFormularioInscripcionActionPerformed

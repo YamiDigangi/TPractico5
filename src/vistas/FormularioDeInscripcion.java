@@ -5,19 +5,28 @@
  */
 package vistas;
 
+import java.util.HashSet;
+import tpractico5.Alumno;
+import tpractico5.Materia;
+
 /**
  *
  * @author yamic
  */
 public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
 
+    private HashSet<Alumno> lAlumnos= new HashSet<>();
+    private HashSet<Materia> lMaterias = new HashSet<>();
     /**
      * Creates new form FormulariodeInscripcion
      */
-    public FormularioDeInscripcion() {
+    public FormularioDeInscripcion(HashSet<Alumno> lAlumnos,HashSet<Materia> lMaterias) {
         initComponents();
+        this.lAlumnos=lAlumnos;
+        this.lMaterias=lMaterias;
+        cargaComboMaterias();
+        cargaComboAlumnos();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,15 +56,17 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         jbInscribir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbInscribir.setForeground(new java.awt.Color(255, 102, 51));
         jbInscribir.setText("Inscribir");
+        jbInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbInscribirActionPerformed(evt);
+            }
+        });
 
-        jcbMaterias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jcbMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbMateriasActionPerformed(evt);
             }
         });
-
-        jcbAlumnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jbSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 102, 51));
@@ -118,6 +129,19 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cargaComboMaterias(){
+        for (Materia materias : lMaterias){
+            jcbMaterias.addItem(materias);
+        }
+    }
+    
+    private void cargaComboAlumnos(){
+        for (Alumno alumnos : lAlumnos){
+            jcbAlumnos.addItem(alumnos);
+        }
+    }
+    
+    
     private void jcbMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbMateriasActionPerformed
@@ -126,14 +150,21 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
+    private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
+        // TODO add your handling code here:
+        Alumno alumnoElegido = (Alumno)jcbAlumnos.getSelectedItem();
+        Materia materiaElegida = (Materia)jcbMaterias.getSelectedItem();
+        alumnoElegido.agregarMateria(materiaElegida);
+    }//GEN-LAST:event_jbInscribirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbSalir;
-    private javax.swing.JComboBox<String> jcbAlumnos;
-    private javax.swing.JComboBox<String> jcbMaterias;
+    private javax.swing.JComboBox<Alumno> jcbAlumnos;
+    private javax.swing.JComboBox<Materia> jcbMaterias;
     private javax.swing.JLabel jlElijaAlumno;
     private javax.swing.JLabel jlElijaMateria;
     // End of variables declaration//GEN-END:variables

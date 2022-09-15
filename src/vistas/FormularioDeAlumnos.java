@@ -6,12 +6,9 @@
 package vistas;
 
 
-
-import java.util.HashSet;
-import java.util.*;
 import javax.swing.JOptionPane;
 import tpractico5.Alumno;
-import tpractico5.Materia;
+
 
 /**
  *
@@ -190,7 +187,7 @@ public class FormularioDeAlumnos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtfNombreActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-       int legajo =Integer.parseInt(jtfLegajo.getText());
+        int legajo =Integer.parseInt(jtfLegajo.getText());
         String apellido = jtfApellido.getText();
         String nombre = jtfNombre.getText();
         

@@ -2,7 +2,6 @@
 package tpractico5;
 
 import java.util.HashSet;
-import java.util.Set;
 import javax.swing.JOptionPane;
 
 
@@ -11,7 +10,7 @@ public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
-    Set<Materia> materias = new HashSet<>();
+    private HashSet<Materia> materias = new HashSet<>();
     
     public Alumno() {
     }
@@ -49,7 +48,7 @@ public class Alumno {
     
     public void agregarMateria(Materia materia){
            if (materias.add(materia)) {
-            JOptionPane.showMessageDialog(null, "La materia " + materia.toString() + " se agregó correctamente.");
+            JOptionPane.showMessageDialog(null, "El Alumno se agregó correctamente a la materia: "+ materia.toString());
            } else {
                JOptionPane.showMessageDialog(null, "Esa materia ya fue agregada anteriormente");
            }
@@ -62,7 +61,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "legajo = " + legajo + ", apellido = " + apellido + ", nombre = " + nombre + '}';
+        return  apellido +", "+ nombre;
     }
     
     
