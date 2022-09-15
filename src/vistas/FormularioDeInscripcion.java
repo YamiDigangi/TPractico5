@@ -144,7 +144,7 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         Alumno alumnoElegido = (Alumno)jcbAlumnos.getSelectedItem();
         Materia materiaElegida = (Materia)jcbMaterias.getSelectedItem();
         alumnoElegido.agregarMateria(materiaElegida);
-        JOptionPane.showMessageDialog(null, alumnoElegido + "Te inscribiste en la materia " + materiaElegida);
+        
     }//GEN-LAST:event_jbInscribirActionPerformed
 
       private void cargaComboMaterias(){

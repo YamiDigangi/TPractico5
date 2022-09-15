@@ -48,10 +48,11 @@ public class Alumno {
     
     public void agregarMateria(Materia materia){
            if (materias.add(materia)) {
-            JOptionPane.showMessageDialog(null, "El Alumno se agregó correctamente a la materia: "+ materia.toString());
+            JOptionPane.showMessageDialog(null, this.toString() +", " + "Te inscribiste en la materia: " + materia);
            } else {
                JOptionPane.showMessageDialog(null, "Esa materia ya fue agregada anteriormente");
            }
+           
     }
     
     public int cantidadMaterias(){
